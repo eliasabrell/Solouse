@@ -7,8 +7,21 @@
   },
   "author": "abrell",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^4.21.2"
-  }
+    "express": "^4.21.2",
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliasabrell/Solouse.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/eliasabrell/Solouse/issues"
+  },
+  "homepage": "https://github.com/eliasabrell/Solouse#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+    }
 }
