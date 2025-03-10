@@ -1,16 +1,22 @@
 ARG NODE_VERSION=22.14.0
+
 FROM node:${NODE_VERSION}
 #FROM node:${NODE_VERSION}-alpine
 #FROM node:${NODE_VERSION}-slim
 
-#RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
-
 ENV PORT=3000
-ENV MESSAGE="Hello Docker!"
+
+WORKDIR /usr/src/app
+
+#RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=package-lock.json,target=package-lock.json \
+    --mount=type=cache,target=/root/.npm \
+    npm ci --omit=dev
 
 LABEL author="Saile Abreu"
 LABEL version="1.0"
-LABEL description="Solouse"
+LABEL description="solouse"
 LABEL env="production"
 
 WORKDIR /app
@@ -25,4 +31,4 @@ HEALTHCHECK --interval=20s --timeout=5s --start-period=5s --retries=3 CMD [ "cur
 
 EXPOSE 3000
 
-CMD ["node", "src/server.js"]
+CMD npm start
