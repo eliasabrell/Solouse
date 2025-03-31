@@ -10,7 +10,7 @@ const supportRoutes = require("./routes/supportRoute");
 
 const app = express();
 
-const massage = process.env.MESSAGE || "Hello World!";
+const message = process.env.MESSAGE || "Hello World!";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,5 +23,16 @@ app.use("/", perfilRoutes);
 app.use("/", coursesRoutes);
 app.use("/", essaysRoutes);
 app.use("/", supportRoutes);
+app.get("/db", async function(req, res) {
+    const mysql = require('mysql2');
+    const connection = mysql.createConnection({
+        host : process.env.DB_HOST,
+        user : process.env.DB_USER,
+        password : process.env.DB_PASS,
+        database : process.env.DB_NAME
+    });
+    connection.connect();
+    res.send('Database connection successful!');
+});
 
 module.exports = app;

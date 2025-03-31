@@ -1,97 +1,61 @@
-logs
+# Dependências
+node_modules/
+jspm_packages/
+bower_components/
+web_modules/
+.yarn/
+.yarn-integrity
+
+# Arquivos temporários e caches
+.cache/
+.parcel-cache
+.npm
+.nyc_output
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_*/
+
+# Logs e relatórios
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-pids
+# PIDs e travas
+pids/
 *.pid
 *.seed
 *.pid.lock
 
-lib-cov
-
-coverage
-*.lcov
-
-.nyc_output
-
-.grunt
-
-bower_components
-
-.lock-wscript
-
-build/Release
-
-node_modules/
-jspm_packages/
-
-web_modules/
-
-*.tsbuildinfo
-
-.npm
-
-.eslintcache
-
-.stylelintcache
-
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-.node_repl_history
-
-*.tgz
-
-.yarn-integrity
-
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-.cache
-.parcel-cache
-
-.next
-out
-
-.nuxt
-dist
-
-.cache/
-
+# Diretórios de build e distribuição
+build/
+dist/
+out/
+.next/
+.nuxt/
 .vuepress/dist
-
 .temp
-.cache
-
 **/.vitepress/dist
 
-**/.vitepress/cache
+# Arquivos locais e de ambiente
+.env*
+.env.local
 
-.docusaurus
+# Histórico e arquivos diversos
+.node_repl_history
+*.tgz
+.DS_Store
+.lock-wscript
 
-.serverless/
-
-.fusebox/
-
-.dynamodb/
-
-.tern-port
-
+# Configuração de ferramentas específicas
+serverless/
+docusaurus/
+fusebox/
+dynamodb/
 .vscode-test
-
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+tern-port/
