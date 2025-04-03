@@ -1,6 +1,6 @@
 exports.getSignup = (req, res) => {
-    res.send("Signup!");
+  res.send("Signup!");
 };
 exports.postSignup = (req, res) => {
-    res.send("Cadrastro realizado!");
+  res.send("Cadrastro realizado!");
 };

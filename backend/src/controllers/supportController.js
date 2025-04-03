@@ -1,6 +1,6 @@
 exports.getSupport = (req, res) => {
-    res.send("Suporte!");
+  res.send("Suporte!");
 };
 exports.postSupport = (req, res) => {
-    res.send("Suporte realizado!");
+  res.send("Suporte realizado!");
 };

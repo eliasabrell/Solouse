@@ -23,7 +23,16 @@ npm run db:migrate
 ## Usage
 
 How to start the project and access main features:
+
+Start backend
 ```bash
+cd backend
+npm start
+```
+
+Start frontend
+```bash
+cd frontend
 npm start
 ```
 
@@ -50,7 +59,6 @@ solouse/
 │   │   └── index.html
 │   ├── src/
 │   │   ├── components/
-│   │   │
 │   │   ├── App.js
 │   │   ├── App.css
 │   │   ├── index.css

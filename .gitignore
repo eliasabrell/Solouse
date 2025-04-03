@@ -59,3 +59,6 @@ fusebox/
 dynamodb/
 .vscode-test
 tern-port/
+.dockerignore
+dockerfile.dev
+docker-compose.dev.yaml

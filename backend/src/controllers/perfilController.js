@@ -1,6 +1,6 @@
 exports.getPerfil = (req, res) => {
-    res.send("Seu perfil!");
+  res.send("Seu perfil!");
 };
 exports.putPerfil = (req, res) => {
-    res.send("Perfil atualizado!");
+  res.send("Perfil atualizado!");
 };

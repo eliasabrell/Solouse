@@ -1,3 +1,3 @@
 exports.getEssays = (req, res) => {
-    res.send("Esaio!");
+  res.send("Ensaio!");
 };

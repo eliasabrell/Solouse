@@ -1,17 +1,40 @@
 services:
-  web:
+  backend:
     build:
-      context: .
+      context: ./backend
+      dockerfile: dockerfile.dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - NODE_ENV=development
+    #depends_on:
+      #db:
+      #  condition: service_healthy
+    command: npm start
+
+  frontend:
+    build:
+      context: ./frontend
       dockerfile: dockerfile.dev
     ports:
       - "3000:3000"
     volumes:
-      - /app/node_modules
-      - .:/app
-    stdin_open: true
+      - ./frontend:/app
+    environment:
+      - NODE_ENV=development
+    command: npm start
 
   db:
     image: mysql:8.0.30-debian
     environment:
       MYSQL_DATABASE: db
-      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: process.env.DB_PASS
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
