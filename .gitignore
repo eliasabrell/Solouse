@@ -61,4 +61,4 @@ dynamodb/
 tern-port/
 .dockerignore
 dockerfile.dev
-docker-compose.dev.yaml
+docker-compose.yaml
