@@ -60,5 +60,8 @@ dynamodb/
 .vscode-test
 tern-port/
 .dockerignore
+Dockerfile
 dockerfile.dev
 docker-compose.yaml
+compose.yaml
+compose.dev.yaml
