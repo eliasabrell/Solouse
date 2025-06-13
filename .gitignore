@@ -17,6 +17,7 @@ web_modules/
 .rts2_cache_*/
 
 # Logs e relatórios
+__pycache__
 logs/
 *.log
 npm-debug.log*
@@ -43,6 +44,8 @@ out/
 **/.vitepress/dist
 
 # Arquivos locais e de ambiente
+/venv
+.venv
 .env*
 .env.local
 
