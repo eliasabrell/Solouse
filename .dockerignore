@@ -1,8 +1,0 @@
-dockerfile
-docker-compose.yaml
-node_modules
-node_repl_history
-npm-debug.log
-.git
-.gitignore
-.DS_Store
