@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
 from config import DevelopmentConfig, ProductionConfig
-from extensions import db, jwt, cors
+from extensions import db, migrate, jwt, cors
 from routes.auth import auth_bp
 from routes.users import users_bp
-#from routes.products import products_bp
-#from routes.orders import orders_bp
+from routes.products import products_bp
+from routes.orders import orders_bp
 
 def create_app(config_class=DevelopmentConfig):
     app = Flask(__name__)
@@ -13,12 +13,13 @@ def create_app(config_class=DevelopmentConfig):
     db.init_app(app)
     jwt.init_app(app)
     cors.init_app(app)
+    migrate.init_app(app, db)
 
     # Registra Blueprints
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(users_bp, url_prefix='/api/users')
-#    app.register_blueprint(products_bp, url_prefix='/api/products')
-#    app.register_blueprint(orders_bp, url_prefix='/api/orders')
+    app.register_blueprint(products_bp, url_prefix='/api/products')
+    app.register_blueprint(orders_bp, url_prefix='/api/orders')
 
     @app.errorhandler(404)
     def not_found_error(error):
